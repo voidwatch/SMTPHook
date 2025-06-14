@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.19.2",
-    "body-parser": "^1.20.2"
+    "@fastify/formbody": "^8.0.1",
+    "@fastify/express": "^9.0.0",
+    "fastify": "^4.27.2"
   }
 }

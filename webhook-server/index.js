@@ -1,17 +1,25 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const fastify = require('fastify')({ logger: true });
 
-const app = express();
-const PORT = process.env.PORT || 4000;
+fastify.register(require('@fastify/formbody'));
+fastify.register(require('@fastify/express')); // optional if you want Express-style middleware
 
-app.use(bodyParser.json({ limit: '50mb' }));
-
-app.post('/incoming', (req, res) => {
-  console.log('📨 Incoming parsed email:');
-  console.dir(req.body, { depth: null, colors: true });
-  res.status(200).send('Received');
+// POST /incoming — receive parsed emails
+fastify.post('/incoming', async (request, reply) => {
+  fastify.log.info('📨 Incoming parsed email:');
+  fastify.log.info(request.body);
+  reply.status(200).send('Received');
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Webhook receiver running at http://localhost:${PORT}/incoming`);
+// GET /health — simple health check
+fastify.get('/health', async (_, reply) => {
+  reply.send({ status: 'ok', uptime: process.uptime() });
+});
+
+// Start the server
+fastify.listen({ port: process.env.PORT || 4000, host: '0.0.0.0' }, (err, address) => {
+  if (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
+  fastify.log.info(`✅ Webhook receiver running at ${address}/incoming`);
 });

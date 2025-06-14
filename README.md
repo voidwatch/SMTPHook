@@ -15,7 +15,7 @@ Haraka for the SMTP server
 
 Node.js + Mailparser for email parsing
 
-Express webhook receiver
+Fastify webhook receiver
 
 Podman/Docker Compose for orchestration
 
@@ -34,7 +34,7 @@ Log rotation and routing/filtering logic for production use
 - Converts raw email to JSON and forwards to a webhook
 
 ### 3. Webhook Receiver (for local testing)
-- Express server that logs received payloads
+- Fastify server that logs received payloads and exposes a /health endpoint
 - Useful for testing end-to-end flow
 
 ## Project Structure
