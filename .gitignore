@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+.env
+.env.*
+dist/
+coverage/
+
+# Docker
+*.log
+*.pid
+*.sock
+Dockerfile.*
+docker-compose.override.yml
+
+# VSCode/JetBrains
+.vscode/
+.idea/
+
+# System
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+
+# Log files
+logs/

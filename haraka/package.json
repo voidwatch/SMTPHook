@@ -1,0 +1,11 @@
+{
+  "name": "haraka-smtp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "haraka": "^2.8.28",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "mailparser": "^3.8.0"
+  }
+}

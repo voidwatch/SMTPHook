@@ -1,0 +1,14 @@
+[Unit]
+Description=Inbound Parse Service (Haraka + Parser + Webhook)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/inbound-parse-service
+ExecStart=/usr/bin/podman-compose up
+ExecStop=/usr/bin/podman-compose down
+Restart=always
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+# Auto-detect text files and ensure LF line endings
+* text=auto
+
+# Treat shell scripts as UTF-8
+*.sh text eol=lf
+
+# Handle common language formats
+*.js text
+*.json text
+*.md text
+*.yml text
+*.yaml text
+*.ini text

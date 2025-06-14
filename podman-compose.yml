@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  smtp:
+    image: haraka/haraka
+    container_name: haraka-smtp
+    ports:
+      - "2525:2525"
+    volumes:
+      - ./haraka:/usr/src/app
+      - ./logs:/app/logs
+    restart: always
+
+  parser:
+    build: ./parser
+    container_name: email-parser
+    env_file:
+      - .env
+    depends_on:
+      - smtp
+    volumes:
+      - ./logs:/app/logs
+    restart: always
+
+  webhook:
+    build: ./webhook-server
+    container_name: webhook-server
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./logs:/app/logs
+    restart: always
