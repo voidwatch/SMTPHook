@@ -1,8 +1,8 @@
 # Inbound Parse Service (Open Source SendGrid Inbound Parse Alternative)
-![License](https://img.shields.io/github/license/yourname/SMTPHook)
-![Issues](https://img.shields.io/github/issues/yourname/SMTPHook)
-![Last Commit](https://img.shields.io/github/last-commit/yourname/SMTPHook)
-![Stars](https://img.shields.io/github/stars/yourname/SMTPHook?style=social)
+![License](https://img.shields.io/github/license/voidwatch/SMTPHook)
+![Issues](https://img.shields.io/github/issues/voidwatch/SMTPHook)
+![Last Commit](https://img.shields.io/github/last-commit/voidwatch/SMTPHook)
+![Stars](https://img.shields.io/github/stars/voidwatch/SMTPHook?style=social)
 
 > A self-hosted, open-source replacement for SendGrid Inbound Parse. Receive SMTP emails, parse them into JSON, and forward to any webhook endpoint. Easy to run with Podman or Docker Compose.
 
